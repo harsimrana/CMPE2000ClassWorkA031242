@@ -1,0 +1,62 @@
+/*
+ selector {
+    property1: value;
+    property2: value;
+    .
+    .
+    property n: value;
+ }
+*/
+
+body
+{
+    background-color: antiquewhite;
+}
+
+h1
+{
+    background-color: white;
+    color:aquamarine;
+    /*color: rgb(46, 225, 75);*/
+    color: rgba(46, 225, 75, 0.5);
+    /* rgba where a stands for alpha that will control 
+        0.5 50% transparent 
+    */
+    /* Shortcut property for border*/
+    /*     width style color                  */
+    border: 5px solid blue;
+
+/* Regular style of adding border
+    border-width: 2px;
+    border-style: solid;
+    border-color: blue;
+*/  
+    border-radius: 20px;  
+    
+    /* Padding: is space between the border and text*/
+    padding: 10px 15px 20px 25px;
+/*
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 25px;
+*/
+    margin: 10px 25px 15px 20px;
+
+    /*Margin: is space between element and other elements*/
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 25px;
+}
+
+p
+{
+    font-size: 20pt;
+    font-weight: bolder;
+    text-align:center;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: line-through;
+    
+}
+
