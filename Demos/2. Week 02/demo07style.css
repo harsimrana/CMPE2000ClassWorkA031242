@@ -1,0 +1,32 @@
+
+/*
+using import option link your font to css file
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+p, h1  /* Apply this style on p and h1 elements*/
+{
+    font-family: "Roboto", serif;
+    
+}
+
+main p /* All p elements inside main container*/
+{
+    text-indent: 20px;
+    line-height: 1.5;
+    word-spacing: 3px;
+}
+
+#p1
+{
+    color: blue;
+}
+
+.firstClass
+{
+    color:aqua;
+    background-color: black;
+}
+
+
+
