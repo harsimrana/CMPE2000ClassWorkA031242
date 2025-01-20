@@ -28,5 +28,27 @@ main p /* All p elements inside main container*/
     background-color: black;
 }
 
+a
+{
+    display: block; /*block: element will sit on its on line*/
+}
+
+a:link /* Applies to links that have not been clicked*/
+{
+    color:aqua;
+}
+a:visited /* applied to visited links*/
+{
+    color:yellowgreen;
+}
+a:hover /* applied to links when you are going to move the mouse cursor over those*/
+{
+    color: blue;
+}
+a:active /* applies to links when it is being clicked You can hold left mouse key to check this one.*/ 
+{
+    color:brown;
+}
+
 
 
