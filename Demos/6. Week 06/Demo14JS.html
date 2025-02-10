@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Demo 14</title>
+        <!--Link to CSS file-->
+        <link rel="stylesheet" href="styles.css">
+
+        <!--Link to your JS file-->
+
+        <script src="code.js"> </script>
+        <script>
+            /* Embedded style of javasctip: Inside the head section fo your HTML Page*/
+            function firstFunction()
+            {
+                let message ="Hello  From My first function";
+                window.alert(message);
+                //window keyword is optional 
+                //single line comment
+                /* 
+                    Multiline comment
+                 */
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Week 06: Day 01: Demo 14: Introduction to Javascript :  10.02.2025</h1>
+        </header>
+        <main>
+            <button onclick="window.alert('Successfully login to website');"> Click me for a message.</button>
+            <button onclick="document.body.style.backgroundColor='lightblue'";> Click to change color </button>
+            <!--alert() : to give a alert message to user-->
+
+            <button onclick="document.write(document.body.innerHTML);"> Duplicate </button>
+
+            <button onclick="firstFunction()"> Call my function</button>
+
+            <button onclick="secondFunction()"> Call External file function </button>
+
+            <button onclick="redirectToNait()"> Visit NAIT</button>
+
+            <button onclick="obtainDimensions()"> Obtain Dim</button>
+
+            <button onclick="inputAge()"> Input age </button>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

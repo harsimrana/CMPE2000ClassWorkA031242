@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Demo 13</title>
+        <style>
+            div>p{  /* with space div p : all paragraphs which are under div : child grandchild and so on*/  
+                    /* with >     div>p : all paragraphs which are direct children of div */
+                background-color: bisque;
+                color:blue;
+            }
+
+            ul li:first-child  /* to target specfic child of list*/
+            {
+                color:blueviolet;
+            }
+            li:hover  /* When user is going to hover mouse pointer on any element*/
+            {
+                background-color: blue;
+                color:white;
+            }
+            ul li:first-child:hover  /* to target specfic child of list*/
+            {
+                color:blueviolet;
+                background-color: black;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1> Week 06: Day 01 : Demo 13: More Selectors</h1>
+        </header>
+        <main>
+            <p> This is first para on my page.</p>
+
+            <div>
+                <p> This is my second para inside a div.</p>
+                <section>
+                    <p> Nested para inside internal container</p>
+                </section>
+            </div>
+
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JS</li>
+                <li>jQuery</li>
+                <li>Ajax</li>
+            </ul>
+        </main>
+        <footer>
+            &copy; Copyright: NAIT
+            <script>
+                document.write("Last Modified" + document.lastModified);
+            </script>
+        </footer>
+    </body>
+</html>

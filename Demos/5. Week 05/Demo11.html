@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Demo 11</title>
+        <style>
+            div
+            {
+                border: 1px solid black;
+            }
+            .item1
+            {
+                grid-area:a1;
+            }
+            
+            .item2
+            {
+                grid-area:a2;
+            }
+            .item3
+            {
+                grid-area:a3;
+            }
+            .item4
+            {
+                grid-area:a4;
+                display: grid;
+                grid-template-areas:
+                "n4"
+                "n1"
+                "n2"
+                "n3"
+            }
+            .item5
+            {
+                grid-area:a5;
+            }
+            .item6
+            {
+                grid-area:a6;
+                display: flex;
+                align-items: center;
+                justify-items: center;
+            }
+               
+            .ng1
+            {
+                grid-area:n1;
+            }
+            .ng2
+            {
+                grid-area:n2;
+            }
+            .ng3
+            {
+                grid-area:n3;
+            }
+            .ng4
+            {
+                grid-area:n4;
+            }
+            .container  /*Mobile View*/
+            {
+                display: grid;
+                
+                grid-template-areas:  /*Specify the order of your items here rowwise*/
+                "a1" 
+                "a2"
+                "a3"
+                "a4"
+                "a6"
+                "a5"
+            }
+
+            @media screen and (min-width: 800px) /*Desktop view*/
+            {
+                .container
+                {
+                    display: grid;
+                    grid-template-columns: 1fr 2fr 3fr;
+                    grid-template-rows: 100px 200px;
+                    grid-template-areas:  /*Specify the order of your items here rowwise*/
+                    "a6 a6 a6" 
+                    "a1 a1 a4"
+                    "a2 a3 a5";
+                }
+                .item4
+                {
+                    grid-area:a4;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    grid-template-areas:
+                    "n4 n3"
+                    "n1 n2"
+                 }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1> Week 05 Day 02: Demo 11: Other style of Grid</h1>
+        </header>
+        <main class="container">
+            <div class="item1"> 1</div>
+            <div class="item2"> 2</div>
+            <div class="item3"> 3</div>
+            <div class="item4"> 
+                <div class="ng1"> First Para</div>
+                <div class="ng2"> Second Para</div>
+                <div class="ng3"> Third Para</div>
+                <div class="ng4"> Fourth Para</div>
+            </div>
+            <div class="item5"> 5</div>
+            <div class="item6"> 6</div>
+
+        </main>
+        <footer>
+            <p> &copy; Copyright: NAIT 
+                <script>
+                    document.write("Last Modified: " + document.lastModified);
+                </script>
+            </p>
+        </footer>
+    </body>
+</html>
