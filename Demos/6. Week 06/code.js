@@ -67,6 +67,5 @@ function inputAge()
         alert("Please provide a valid number");
     }
 
-
-    // Will continue in next class
+    
 }
