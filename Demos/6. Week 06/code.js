@@ -54,4 +54,19 @@ function inputAge()
     //           Prompt message   ,Default value
     age = prompt("Enter your age", "0");
     // It will return age value 
+    // If ok button is clicked, it will return value entered
+    // IF cancel button is clicked, it will return null
+    console.log(age);
+    // isNan- Is not a number - true or false - if it is a number
+    if(!isNaN(age))
+    {
+        alert("Valid value");
+    }
+    else
+    {
+        alert("Please provide a valid number");
+    }
+
+
+    // Will continue in next class
 }
