@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Demo 12</title>
+        <style>
+            body{
+                background-color: antiquewhite;
+                color:blueviolet;
+                text-align:center;
+            }
+            form{
+                border: 3px dotted seagreen;
+                width:50%;
+                margin: 10px auto;
+                padding: 1%;
+            }
+            #login
+            {
+                display: none;
+            }
+            [name] /* Selector based on attributes*/
+            {
+                background-color: aquamarine;
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1> Week 05 Day 02: Student Registration Form</h1>
+        </header>
+        <main>
+            <form action="ws.php" method="POST" >
+                <label for=""> Name:  </label>  <!-- label tag is used for providing a label-->
+                <input type="text" name="Username"> <!-- This is main element for taking values from user-->
+                
+                <label for=""> Student Id</label>
+                <input type="text" name="studentid">
+
+                <br><br>
+                <fieldset>
+                    <legend>Gender</legend>
+                    <label for="gender"> </label>
+                    <input type="radio" name="gender" checked> Male  <!--radio type will change it radio button--> 
+                    <input type="radio" name="gender"> Female
+                    <input type="radio" name="gender"> Not willing to reveal
+                </fieldset>
+                <br><br>
+                <label for="">Hobbies: </label><br>
+                <input type="checkbox" checked> Singing
+                <input type="checkbox"> Playing Chess
+                <input type="checkbox"> Guitar
+                <input type="checkbox"> Reading Books
+                
+                <br>
+                <!--Drop down list -->
+                <label for="">City: </label>
+                <select> <!-- selected attribute to select default option-->
+                    <option value="">Select city</option>
+                    <option value="" >Edmonton</option>
+                    <option value="">Red Deer</option>
+                    <option value="">Calgary</option>
+                    <option value="">Banff</option>
+                    <option value="">Jasper</option>
+                    <option value="">Surrey</option>
+                    <option value="">Brampton</option>
+
+                </select>
+                <br>
+                <label for="">What is your rating for our form</label>
+                <input type="number"  min="0" max="10" step="3" value="1">
+
+                <br>
+                <input type="range" value="7" min="1" max="10" >
+                <br><br>
+                <!--For buttons use submit, reset or button as type-->
+                <input type="submit" value="Submit"> <!--Submit the form-->
+                <input type="reset" value="Reset"> <!-- Reset your form back to default values-->
+                <button id="login">Login</button> <!-- Button tag to create simple button-->
+
+            </form>
+        </main>
+    </body>
+</html>
