@@ -1,0 +1,15 @@
+main
+{
+
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2, 100px);
+}
+section
+{
+    border: 2px solid green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
