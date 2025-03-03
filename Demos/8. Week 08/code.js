@@ -4,6 +4,8 @@ let elem="";  // storing new node as global variable
 
 let timer ="";  // To track timer
 
+let nodeList;
+
 window.onload = ()=>{
     console.log("On Load");
 
@@ -42,8 +44,35 @@ window.onload = ()=>{
     document.querySelector("#moveEleTimer").onclick = MoveTextOnTimer;
     document.querySelector("#clrTimer").onclick= StopElement;
 
+    document.querySelector("#posElements").onclick = PositionElements;
+
+    // Trying to store reference for each section in NodeList
+    // querySelectorAll will retunr an array as reference to all matching element 
+    
+    nodeList = document.querySelectorAll("section"); 
+    // querySelector will give you first refereence of matching elements
+
 }
 
+// Important for LAB 02
+function PositionElements()
+{
+    console.log("Pos elements button has been clicked");
+    console.log(nodeList);
+
+    for(let i = 0; i < nodeList.length; i++)
+    {
+        let posStr = nodeList[i].getAttribute("position");
+        console.log(posStr);
+        let rowNo =  parseInt(posStr.substring(0,2));  // Substring 0 1
+        let colNo =  parseInt(posStr.substring(2,4));  // Substring 2 3
+
+        console.log("Row Number "+ rowNo);
+                                    //      1/2
+        nodeList[i].style.setProperty("grid-row", `${rowNo} / ${rowNo+1}` );
+        nodeList[i].style.setProperty("grid-column", `${colNo} / ${colNo+1}` );
+    }
+}
 
 function StopElement()
 {
