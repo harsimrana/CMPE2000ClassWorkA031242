@@ -52,8 +52,101 @@ window.onload = ()=>{
     nodeList = document.querySelectorAll("section"); 
     // querySelector will give you first refereence of matching elements
 
+
+    document.querySelector("[name=LoginForm]").onsubmit= Validate;
+    
+    let radioButtonList = document.querySelectorAll("[name=category]");
+    
+    // Assiging onclick event for each radio button
+    // REGULAR way of doing it
+    /*
+    for(i=0; radioButtonList.length; ++i)
+    {
+        radioButtonList[i].onclick = RadioSelected;
+    }
+    */
+
+    // Alternative Shortcut way using foreach
+                        //   item  , index
+    /*
+    radioButtonList.forEach((item, index)=>{
+        item.onclick = RadioSelected;
+    } );
+     */
+    // More compact version 
+    radioButtonList.forEach((item, index)=>{
+        item.onclick = function(){
+            console.log("Radio button function");
+            console.log(this.value);
+        };
+    } );
+
+    document.querySelector("#rdoSelected").onclick= CategorySelected;
+
+    document.querySelector("#instructorList").onchange = ShowSelectedInstructor;
 }
 
+function ShowSelectedInstructor()
+{
+    console.log("Inside Show Selected Inst function");
+    console.log(this.value);
+
+}
+
+function CategorySelected()
+{
+    console.log("Inside Category selected function");
+    let category = document.querySelector("[name=category]:checked");
+
+    console.log(category.value);
+    //Alternative way
+    let categories = document.querySelectorAll("[name=category]");
+
+    for(i=0; i<categories.length; ++i)
+    {
+        if(categories[i].checked)
+        {
+            console.log("Selected category = " + categories[i].value);
+        }
+    }
+
+    //select any specific radio button
+    categories[2].checked= true;
+
+    // Unselected radio buttons
+    let category1 = document.querySelectorAll("[name=category]:not(:checked) ");
+
+    //console.log(category.value);
+}
+
+
+function RadioSelected()
+{
+    console.log("Radio button function");
+    console.log(this.value);
+}
+function Validate()
+{
+    console.log("Form submission");
+    // Validate your form field here
+
+    alert("Do you like to proceed?");
+    let username = document.querySelector("[name=username]").value; 
+    
+    console.log(username);
+
+    if(username == "" || username.length !=6)
+    {
+        alert("Username is empty or it should be 6 chacters only");
+        //let button = document.querySelector("[type=submit]");
+        //console.log(button);
+       // button.setAttribute("disable",true);
+        return false; // Avoid form submission by returning false
+    }
+
+    alert("All good ready to submit form");
+    return true; // Allowing the form submission by returning true
+}
 // Important for LAB 02
 function PositionElements()
 {
