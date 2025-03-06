@@ -84,12 +84,48 @@ window.onload = ()=>{
     document.querySelector("#rdoSelected").onclick= CategorySelected;
 
     document.querySelector("#instructorList").onchange = ShowSelectedInstructor;
+
+    document.querySelector("#instructorList").selectedIndex = 2;  // Select a value in drop down by default
 }
 
 function ShowSelectedInstructor()
 {
     console.log("Inside Show Selected Inst function");
     console.log(this.value);
+    // Add a new image here in the div container with id NewImage
+
+    //Step 1. Create an image and set all attribute
+    let image = new Image();
+
+    image.setAttribute("src", "NaitLogo.png");
+    image.setAttribute("alt", "Nait Logo");
+    image.setAttribute("title", "Nait Logo");  // tooltip - when you hover over it using mouse
+    // Grab CSS properties from Drop down list
+
+    let dropdownList = document.querySelector("#instructorList");
+                    // get style information for passed element - dropdown list
+    let listStyle = window.getComputedStyle( dropdownList);
+
+    console.log(listStyle);
+    let listHeight =  listStyle.getPropertyValue("height");
+    let listColor =  listStyle.getPropertyValue("color");
+
+    console.log("list height : "+listHeight);
+    console.log("list color : "+listColor);
+    // Assign CSS properties which you want to change
+
+    // apply on image
+    image.setAttribute("height", listHeight);
+
+    // Not working because was trying to change the color image itself
+    //document.querySelector("#NewImage").setAttribute("style", "background-color:"+listColor+";");
+
+    document.querySelector("#NewImage").style.setProperty("background-color", listColor);
+
+    // Step 2: Add it to div container
+    document.querySelector("#NewImage").appendChild(image);
+
+
 
 }
 
