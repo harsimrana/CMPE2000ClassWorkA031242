@@ -9,6 +9,7 @@ let nodeList;
 window.onload = ()=>{
     console.log("On Load");
 
+
     document.querySelector("#cabtn").onclick= CreateNAppendNode;
 
     // Anonymous Function - Function without name: suitable candidates for event listeners
@@ -106,7 +107,7 @@ function ShowSelectedInstructor()
                     // get style information for passed element - dropdown list
     let listStyle = window.getComputedStyle( dropdownList);
 
-    console.log(listStyle);
+    console.log(listStyle.height);
     let listHeight =  listStyle.getPropertyValue("height");
     let listColor =  listStyle.getPropertyValue("color");
 
