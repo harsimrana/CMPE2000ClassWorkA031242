@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Demo Practice</title>
+        <script>
+            window.onload= ()=>
+            {
+                //alert("Page load");
+                
+                console.log(document.querySelector("#mylist").value);
+
+                document.querySelector("#mylist").onchange= ()=>{
+                    
+                    console.log(document.querySelector("#mylist").value);
+                }
+                document.querySelector("h1").onclick = ()=>  // Regular standard
+                {
+                    let stringUser= prompt("Enter your name ", "Your Name");
+                    if(stringUser.length > 0 )
+                    {
+                        
+                        document.querySelector("h1").innerHTML = stringUser;       
+                    }
+                    else{
+                        //alert("Name should not be empty");
+                        let pelem = document.querySelector("#warningMessage");
+                        console.log(pelem);
+
+                        //pelem.style.color= "red";
+                        pelem.setAttribute("style","color:red");
+                        pelem.innerHTML = "Name should not be empty";
+                    }
+
+                    document.querySelector(".container").innerHTML = "<img id='myimage' src='NaitLogo.png' alt='NaitLogo'>";
+
+                    //document.querySelector("#myimage").setAttribute("height","20px");
+                    document.querySelector("#myimage").style.height= "200px";
+
+                }
+            }
+            function changeText()  // Regular standard
+            {
+                document.querySelector("h1").innerHTML = "New Text";       
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Demo Practice </h1>
+
+        <p id="warningMessage"> </p>
+        <div class="container">
+
+        </div>
+        <div>
+            <select name="" id="mylist">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+            </select>
+
+            <input type="radio" >
+        </div>
+    </body>
+</html>

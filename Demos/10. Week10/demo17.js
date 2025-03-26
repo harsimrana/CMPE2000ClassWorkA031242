@@ -67,7 +67,7 @@ window.onload = () =>
     }
     // instructor is an object type and you can create instances of it
 
-    // To add functions into object, use constructor protype
+    // To add functions into object, use constructor prototype
     instructor.prototype.changeName = function (name)
     {
         // perform some validation checks on value coming from client side
