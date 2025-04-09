@@ -51,9 +51,39 @@ $( ()=>{
 
     });
 
+    $("[data=class]").click(BigDataAjaxCall);
+    
+
 
 })
 
+function BigDataAjaxCall()
+{
+    console.log("b4 clicked");
+    let urlEdm = "https://data.edmonton.ca/resource/7ds8-hpvz.json";
+
+    MakeAjaxCall(urlEdm, {}, "GET", "JSON", succJSONLargeData, errorHandler);
+}
+
+function succJSONLargeData(serverData, serverStatus)
+{
+    console.log(serverData);
+    console.log(serverData[0].ward);
+
+    let string = "<table>";
+        string += "<tr>  <th>S.No </th> <th>Ward # </th></tr>";
+        
+        for(i=0; i<serverData.length; ++i)
+        {
+            // String concat
+            string += "<tr>  <td>"+ (i+1) +" </td> <td>" + serverData[i].ward+" </td></tr>";
+            // String interpolation
+            //string += `<tr>  <td> 1 </td> <td> ${serverData[0].ward} </td></tr>`;
+        }
+    string += "</table>";
+    
+    $("#serverResponse").html(string);
+}
 // Success handler for b3 Ajax call
 function successB3(serverData, serverStatus)
 {
@@ -66,7 +96,7 @@ function successB3(serverData, serverStatus)
 
 
     // Show information on page
-    $("#serverResponse").html(serverData);
+    $("#serverResponse").html( "Name: " + serverData.name + "<br> Current Turn: "+ serverData.currentTurn);
     $("#serverResponse").css("color","green");
 
 }
