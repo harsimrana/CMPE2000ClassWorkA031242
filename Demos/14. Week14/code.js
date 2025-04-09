@@ -36,8 +36,40 @@ $( ()=>{
         MakeAjaxCall(url, data, "GET", "HTML", successB1, errorHandler);
     });
 
+    // bind event on b3 button
+    $(".newData").on("click", ()=>{
+        console.log("b3 clicked");
+        let data={};
+
+        data.name= "Harsimranjot";
+        data.action = "b3";
+
+        console.log(data);
+
+        MakeAjaxCall(url,data,"GET", "JSON", successB3, errorHandler);
+
+
+    });
+
 
 })
+
+// Success handler for b3 Ajax call
+function successB3(serverData, serverStatus)
+{
+    console.log(serverData);
+
+    console.log(serverData.name); // Object style
+    console.log(serverData['name']);// arrat style
+
+    console.log(serverStatus);
+
+
+    // Show information on page
+    $("#serverResponse").html(serverData);
+    $("#serverResponse").css("color","green");
+
+}
 
 // Success handler for b1 Ajax call
 function successB1(serverData, serverStatus)
