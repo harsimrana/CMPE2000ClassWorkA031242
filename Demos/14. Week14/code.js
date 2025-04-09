@@ -1,3 +1,5 @@
+let url= "https://thor.cnt.sast.ca/~aulakhha/1241/CMPE2000A01/serverfiles/main.php";
+
 $( ()=>{
     console.log(" On Page load");
     // AJAX- Asynchronous Javascript and XML [Extensible Markup Language] - file  format for storing, transimitting ans reconstructing data
@@ -12,9 +14,52 @@ $( ()=>{
         5. Call back funcion: Success, Error, Before making call, When request completes but before calling success function
 
     */
+    // bind your buttons
+    $("#b1").click(()=>{
+        console.log("b1 clicked");
+
+        // Make ajax call
+        MakeAjaxCall(url, {}, "GET", "HTML", successB1, errorHandler);
+    });
+
+    // bind your buttons
+    $("#b2").click(()=>{
+        console.log("b1 clicked");
+        let data= {};
+
+        data['name']= "Simran";
+        data['action']= "b2";
+
+        console.log(data);
+
+        // Make ajax call
+        MakeAjaxCall(url, data, "GET", "HTML", successB1, errorHandler);
+    });
 
 
 })
+
+// Success handler for b1 Ajax call
+function successB1(serverData, serverStatus)
+{
+    console.log(serverData);
+    console.log(serverStatus);
+
+    // Show information on page
+    $("#serverResponse").html(serverData);
+    $("#serverResponse").css("color","green");
+
+}
+
+function errorHandler(ajaxreq, errorCode, errrorThrown)
+{
+    console.log(errorCode);
+    console.log(errrorThrown);
+     // Show information on page
+     $("#serverResponse").html(errrorThrown);
+     $("#serverResponse").css("color","red");
+
+}
 // Generic function to handle AJAX calls
 function MakeAjaxCall(serverURL, clientData, reqMethod, resDataType, fxnSuccess, fxnError)
 {
